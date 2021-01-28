@@ -1,4 +1,4 @@
-require "icecream"
+require "ricecream"
 ic 1
 ic_format 1
 ic(1)
