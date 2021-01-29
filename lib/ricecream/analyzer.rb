@@ -10,8 +10,8 @@ module Ricecream
     def initialize(path)
       @ic_methods = []
       @last_loc = [1, 0]
-      @path = File.absolute_path(path)
-      return unless File.exist?(@path)
+      @path = File.absolute_path(path.to_s)
+      return unless File.file?(@path)
       @script = File.binread(@path) + " "
       super(@script, @path)
       parse
