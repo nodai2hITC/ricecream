@@ -12,7 +12,14 @@ module Ricecream
     def ic_format(*args)
       Ricecream.format(caller_locations(1, 1).first, :ic_format, args)
     end
+  end
 
-    private :ic, :ic_format
+  module P
+    refine Kernel do
+      def p(*args)
+        Ricecream.ic(caller_locations(1, 1).first, :p, args)
+        return *args
+      end
+    end
   end
 end

@@ -5,7 +5,7 @@ require_relative "ic_method"
 
 module Ricecream
   class Analyzer < Ripper
-    MethodName = /\Aic(?:_format)?\z/
+    MethodName = /\A(?:ic|ic_format|p)\z/
 
     def initialize(path)
       @ic_methods = []

@@ -129,6 +129,16 @@ using Ricecream
 ic
 ```
 
+Similarly, you can override `p` by `using Ricecream::P`.
+
+```ruby
+require "ricecream/refine"
+
+using Ricecream::P
+foo = 123
+p foo # => ic| foo: 123
+```
+
 ### Miscellaneous
 
 - `ic_format(*args)` is like `ic` but the output is returned as a string instead of written to stderr.
