@@ -6,7 +6,11 @@ module Ricecream
   refine Kernel do
     def ic(*args)
       Ricecream.ic(caller_locations(1, 1).first, :ic, args)
-      return *args
+      if args.length == 1
+        return args.first
+      else
+        return *args
+      end
     end
 
     def ic_format(*args)
@@ -18,7 +22,11 @@ module Ricecream
     refine Kernel do
       def p(*args)
         Ricecream.ic(caller_locations(1, 1).first, :p, args)
-        return *args
+        if args.length == 1
+          return args.first
+        else
+          return *args
+        end
       end
     end
   end
